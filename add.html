@@ -3,45 +3,42 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>ICD0007 Näidisrakendus</title>
-    <!--<link href="style.css" rel="stylesheet">-->
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 
 <body>
-<ul>
-    <li><a href="?cmd=list_form">Nimekiri</a></li>
-    <li><a href="?cmd=add_form">Lisa</a></li>
-</ul>
-<!--<main tpl-include="{{$template}}"> </main>-->
-
-<br><br>
-
-<table class="form-table">
-
-    <tbody>
-    <tr>
-        <td>Eesnimi:</td>
-        <td><input name="firstName"></td>
-    </tr>
-    <tr>
-        <td>Perekonnanimi:</td>
-        <td><input name="lastName"></td>
-    </tr>
-    <tr>
-        <td>Telefon:</td>
-        <td><input name="phone"></td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <br>
-            <input name="submit-button" type="submit" value="Salvesta">
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-<br><br>
-
-
+    <div id="menu">
+        <a href="?cmd=list_page" id="list-page-link">Nimekiri</a>&nbsp;&nbsp;|&nbsp;
+        <a href="?cmd=add_page" id="add-page-link">Lisa</a>
+    </div>
+    <main tpl-include="{{$template}}"> </main>
+    <br><br>
+    <div id="main">
+        <form method="post" action="">
+            <table class="form-table">
+                <tbody>
+                <tr>
+                    <td>Eesnimi:</td>
+                    <td><input name="firstName"></td>
+                </tr>
+                <tr>
+                    <td>Perekonnanimi:</td>
+                    <td><input name="lastName"></td>
+                </tr>
+                <tr>
+                    <td>Telefon:</td>
+                    <td><input name="phone"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <br>
+                        <input name="submitButton" type="submit" value="Salvesta">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <br><br>
 </body>
 </html>

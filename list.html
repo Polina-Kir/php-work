@@ -2,35 +2,35 @@
 
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <title>ICD0007 Näidisrakendus</title>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
-<ul>
-    <li><a href="?cmd=list_form">Nimekiri</a></li>
-    <li><a href="?cmd=add_form">Lisa</a></li>
-</ul>
-<!--<main tpl-include="{{$template}}"> </main>-->
-<br><br>
-<table class="b">
-    <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Telefon</th>
-    </tr>
-    <tr >
-        <td>Peter</td>
-        <td>Griffin</td>
-        <td>34950089</td>
-    </tr>
-    <tr >
-        <td>Lois</td>
-        <td>Griffin</td>
-        <td>456789038</td>
-    </tr>
-</table>
-
+    <div id="menu">
+        <a href="?cmd=list_page" id="list-page-link">Nimekiri</a>&nbsp;&nbsp;|&nbsp;
+        <a href="?cmd=add_page" id="add-page-link">Lisa</a>
+    </div>
+    <main tpl-include="{{$template}}"> </main>
+    <br><br>
+    <div id="main">
+        <table class="b">
+            <tr>
+                <th>Eesnimi</th>
+                <th>Perekonnanimi</th>
+                <th>Telefon</th>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>34950089</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+                <td>456789038</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
