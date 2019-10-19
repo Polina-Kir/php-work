@@ -1,9 +1,8 @@
 <?php
 require_once("vendor/tpl.php");
-require_once("Item.php");
+require_once("item.php");
 require_once("connectionsList.php");
-require_once ("Request.php");
-
+require_once("Request.php");
 
 $request = new Request($_REQUEST);
 
@@ -19,12 +18,12 @@ if ($cmd === "show_list_page") {
     print renderTemplate('main.html', $data);
 } else if ($cmd === "show_add_page") {
     $data = ['template' => "add.html"];
-    print renderTemplate('main.html', $data);}
-else if ($cmd === "add") {
+    print renderTemplate('main.html', $data);
+} else if ($cmd === "add") {
     $todoItemFName = $_POST["firstname"];
     $todoItemLName = $_POST["lastname"];
     $todoItemPhone = $_POST["phone"];
-    $todoItem = new Item($todoItemFName, $todoItemLName, $todoItemPhone);
+    $todoItem = new item($todoItemFName, $todoItemLName, $todoItemPhone);
     addTodoItem($todoItem);
     $data = [
         'todoItems' => getTodoItems(),
