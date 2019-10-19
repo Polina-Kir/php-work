@@ -1,36 +1,17 @@
-<!DOCTYPE html>
+<div id="main">
+    <table class="b">
+        <tr>
+            <th>Eesnimi</th>
+            <th>Perekonnanimi</th>
+            <th>Telefon</th>
+        </tr>
+        <tbody>
+        <tr tpl-foreach="$todoItems as $todoitem">
+            <td>{{$todoitem -> firstname}}</td>
+            <td>{{$todoitem -> lastname}}</td>
+            <td>{{$todoitem -> phone}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-<html lang="en">
-<head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <title>ICD0007 Näidisrakendus</title>
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    <div id="menu">
-        <a href="?cmd=list_page" id="list-page-link">Nimekiri</a>&nbsp;&nbsp;|&nbsp;
-        <a href="?cmd=add_page" id="add-page-link">Lisa</a>
-    </div>
-    <main tpl-include="{{$template}}"> </main>
-    <br><br>
-    <div id="main">
-        <table class="b">
-            <tr>
-                <th>Eesnimi</th>
-                <th>Perekonnanimi</th>
-                <th>Telefon</th>
-            </tr>
-            <tr>
-                <td>Peter</td>
-                <td>Griffin</td>
-                <td>34950089</td>
-            </tr>
-            <tr>
-                <td>Lois</td>
-                <td>Griffin</td>
-                <td>456789038</td>
-            </tr>
-        </table>
-    </div>
-</body>
-</html>

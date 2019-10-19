@@ -1,30 +1,35 @@
 <?php
+require_once("vendor/tpl.php");
+require_once("Item.php");
+require_once("connectionsList.php");
+require_once ("Request.php");
 
-require_once 'vendor/tpl.php';
-require_once 'Request.php';
 
 $request = new Request($_REQUEST);
 
-//print $request; // display input parameters (for debugging)
-
 $cmd = $request->param('cmd')
     ? $request->param('cmd')
-    : 'list_page';
+    : 'show_list_page';
 
-if ($cmd === 'list_page') {
+if ($cmd === "show_list_page") {
     $data = [
-        'title' => 'Nimekiri',
+        'todoItems' => getTodoItems(),
         'template' => 'list.html',
     ];
-    print renderTemplate('list.html', $data);
-
-} else if ($cmd === 'add_page') {
+    print renderTemplate('main.html', $data);
+} else if ($cmd === "show_add_page") {
+    $data = ['template' => "add.html"];
+    print renderTemplate('main.html', $data);}
+else if ($cmd === "add") {
+    $todoItemFName = $_POST["firstname"];
+    $todoItemLName = $_POST["lastname"];
+    $todoItemPhone = $_POST["phone"];
+    $todoItem = new Item($todoItemFName, $todoItemLName, $todoItemPhone);
+    addTodoItem($todoItem);
     $data = [
-        'title' => 'Lisa',
-        'template' => 'add.html',
+        'todoItems' => getTodoItems(),
+        'template' => 'list.html',
     ];
-    print renderTemplate('add.html', $data);
-
-} else {
-    throw new Error('programming error');
+    print renderTemplate('main.html', $data);
 }
+

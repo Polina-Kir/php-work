@@ -1,44 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ICD0007 Näidisrakendus</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-</head>
-
-<body>
-    <div id="menu">
-        <a href="?cmd=list_page" id="list-page-link">Nimekiri</a>&nbsp;&nbsp;|&nbsp;
-        <a href="?cmd=add_page" id="add-page-link">Lisa</a>
-    </div>
-    <main tpl-include="{{$template}}"> </main>
-    <br><br>
-    <div id="main">
-        <form method="post" action="">
-            <table class="form-table">
-                <tbody>
-                <tr>
-                    <td>Eesnimi:</td>
-                    <td><input name="firstName"></td>
-                </tr>
-                <tr>
-                    <td>Perekonnanimi:</td>
-                    <td><input name="lastName"></td>
-                </tr>
-                <tr>
-                    <td>Telefon:</td>
-                    <td><input name="phone"></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <br>
-                        <input name="submitButton" type="submit" value="Salvesta">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </form>
-    </div>
-    <br><br>
-</body>
-</html>
+<form name="test" method="post" action="?cmd=add">
+    <table class="form-table">
+        <tbody>
+        <tr>
+            <td>Eesnimi:</td>
+            <td><label for="firstname"></label><input type="text" name="firstname" id="firstname"></td>
+        </tr>
+        <tr>
+            <td>Perekonnanimi:</td>
+            <td><label for="lastname"></label><input type="text" name="lastname" id="lastname"></td>
+        </tr>
+        <tr>
+            <td>Telefon:</td>
+            <td><label for="phone"></label><input type="text" name="phone" id="phone"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <br>
+                <input name="submitButton" type="submit" value="Salvesta">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
