@@ -8,15 +8,15 @@ $request = new Request($_REQUEST);
 
 $cmd = $request->param('cmd')
     ? $request->param('cmd')
-    : 'show_list_page';
+    : 'list_page';
 
-if ($cmd === "show_list_page") {
+if ($cmd === "list_page") {
     $data = [
         'todoItems' => getTodoItems(),
         'template' => 'list.html',
     ];
     print renderTemplate('main.html', $data);
-} else if ($cmd === "show_add_page") {
+} else if ($cmd === "add_page") {
     $data = ['template' => "add.html"];
     print renderTemplate('main.html', $data);
 } else if ($cmd === "add") {
