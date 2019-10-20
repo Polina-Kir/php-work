@@ -15,10 +15,10 @@ if ($cmd === "list_page") {
         'todoItems' => getTodoItems(),
         'template' => 'list.html',
     ];
-    print renderTemplate('main.html', $data);
+    print renderTemplate('list.html', $data);
 } else if ($cmd === "add_page") {
     $data = ['template' => "add.html"];
-    print renderTemplate('main.html', $data);
+    print renderTemplate('add.html', $data);
 } else if ($cmd === "add") {
     $todoItemFName = urlencode($_POST["firstName"]);
     $todoItemLName = urlencode($_POST["lastName"]);
@@ -29,6 +29,6 @@ if ($cmd === "list_page") {
         'todoItems' => getTodoItems(),
         'template' => 'list.html',
     ];
-    print renderTemplate('main.html', $data);
+    print renderTemplate('list.html', $data);
 }
 

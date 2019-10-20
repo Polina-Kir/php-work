@@ -12,7 +12,7 @@ function getTodoItems() {
     $todoItems = [];
     foreach ($lines as $line) {
         list($firstName, $lastName, $phone) = explode(";", $line);
-        $todoItem = new item($firstName, $lastName, $phone);
+        $todoItem = new item(urldecode($firstName), urldecode($lastName), urldecode($phone));
         $todoItems[] = $todoItem;
     }
     return $todoItems;

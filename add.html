@@ -1,24 +1,42 @@
-<form name="test" method="post" action="?cmd=add">
-    <table class="form-table">
-        <tbody>
-        <tr>
-            <td>Eesnimi:</td>
-            <td><label for="firstName"></label><input type="text" name="firstName" id="firstName"></td>
-        </tr>
-        <tr>
-            <td>Perekonnanimi:</td>
-            <td><label for="lastName"></label><input type="text" name="lastName" id="lastName"></td>
-        </tr>
-        <tr>
-            <td>Telefon:</td>
-            <td><label for="phone"></label><input type="text" name="phone" id="phone"></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <br>
-                <input name="submitButton" type="submit" value="Salvesta">
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body id="body">
+
+    <div id="menu">
+            <a href="?cmd=list_page" id="list-page-link">Nimekiri</a>&nbsp;&nbsp;|&nbsp;
+            <a href="?cmd=add_page" id="add-page-link">Lisa</a>
+        </div>
+    <main tpl-include="{{$template}}"> </main>
+    <br><br>
+            <form method="post" action="?cmd=add">
+                <table class="form-table">
+                    <tbody>
+                    <tr>
+                        <td>Eesnimi:</td>
+                        <td><label for="firstName"></label><input type="text" name="firstName" id="firstName"></td>
+                    </tr>
+                    <tr>
+                        <td>Perekonnanimi:</td>
+                        <td><label for="lastName"></label><input type="text" name="lastName" id="lastName"></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon:</td>
+                        <td><label for="phone"></label><input type="text" name="phone" id="phone"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <br>
+                            <input name="submitButton" type="submit" value="Salvesta">
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </form>
+    <br><br>
+</body>
+</html>
