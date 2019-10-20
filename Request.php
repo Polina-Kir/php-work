@@ -1,7 +1,6 @@
 <?php
 
-class Request
-{
+class Request {
 
     public $request;
 
@@ -18,5 +17,4 @@ class Request
     public function __toString() {
         return sprintf('<pre>%s</pre>', print_r($this->request, true));
     }
-
 }
