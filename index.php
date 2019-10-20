@@ -20,8 +20,8 @@ if ($cmd === "show_list_page") {
     $data = ['template' => "add.html"];
     print renderTemplate('main.html', $data);
 } else if ($cmd === "add") {
-    $todoItemFName = $_POST["firstname"];
-    $todoItemLName = $_POST["lastname"];
+    $todoItemFName = $_POST["firstName"];
+    $todoItemLName = $_POST["lastName"];
     $todoItemPhone = $_POST["phone"];
     $todoItem = new item($todoItemFName, $todoItemLName, $todoItemPhone);
     addTodoItem($todoItem);

@@ -1,17 +1,17 @@
 <?php
 
 class item{
-    public $firstname;
-    public $lastname;
+    public $firstName;
+    public $lastName;
     public $phone;
 
-    public function __construct($firstname, $lastname, $phone) {
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
+    public function __construct($firstName, $lastName, $phone) {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
         $this->phone = $phone;
     }
 
     public function __toString() {
-        return "TodoItem{firstname:$this->firstname, lastname:$this->lastname, phone:$this->phone}";
+        return "TodoItem{firstName:$this->firstName, lastName:$this->lastName, phone:$this->phone}";
     }
 }
