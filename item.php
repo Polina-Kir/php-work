@@ -12,6 +12,6 @@ class item{
     }
 
     public function __toString() {
-        return "TodoItem{firstName:$this->firstName, lastName:$this->lastName, phone:$this->phone}";
+        return "item{firstName:$this->firstName, lastName:$this->lastName, phone:$this->phone}";
     }
 }
