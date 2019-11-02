@@ -10,24 +10,28 @@
     <a href="?cmd=list_page" id="list-page-link">Nimekiri</a>&nbsp;&nbsp;|&nbsp;
     <a href="?cmd=add_page" id="add-page-link">Lisa</a>
 </div>
-<main tpl-include="{{$template}}">
-</main>
 <br><br>
+
+<div tpl-if="$saved">
+
+    <h2>Isik on lisatud!</h2>
+</div>
 <div id="main">
-<table class="b">
-    <tr>
-        <th>Eesnimi</th>
-        <th>Perekonnanimi</th>
-        <th>Telefon</th>
-    </tr>
-    <tbody>
-    <tr tpl-foreach="$todoItems as $item">
-        <td>{{$item -> firstName}}</td>
-        <td>{{$item -> lastName}}</td>
-        <td>{{$item -> phone}}</td>
-    </tr>
-    </tbody>
-</table>
+    <table class="b">
+        <tr>
+            <th>Eesnimi</th>
+            <th>Perekonnanimi</th>
+            <th>Telefon</th>
+        </tr>
+        <tbody>
+        <tr tpl-foreach="$todoItems as $item">
+            <td>{{$item -> firstName}}</td>
+            <td>{{$item -> lastName}}</td>
+            <td>{{$item -> phone1}}<span tpl-if="$item -> phone2">, {{$item -> phone2}}</span><span
+                    tpl-if="$item -> phone3">, {{$item -> phone3}}</span></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

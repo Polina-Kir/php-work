@@ -7,36 +7,41 @@
 </head>
 <body id="body">
 
-    <div id="menu">
-            <a href="?cmd=list_page" id="list-page-link">Nimekiri</a>&nbsp;&nbsp;|&nbsp;
-            <a href="?cmd=add_page" id="add-page-link">Lisa</a>
-        </div>
-    <main tpl-include="{{$template}}"> </main>
-    <br><br>
-            <form method="post" action="?cmd=add">
-                <table class="form-table">
-                    <tbody>
-                    <tr>
-                        <td>Eesnimi:</td>
-                        <td><label for="firstName"></label><input type="text" name="firstName" id="firstName"></td>
-                    </tr>
-                    <tr>
-                        <td>Perekonnanimi:</td>
-                        <td><label for="lastName"></label><input type="text" name="lastName" id="lastName"></td>
-                    </tr>
-                    <tr>
-                        <td>Telefon:</td>
-                        <td><label for="phone"></label><input type="text" name="phone" id="phone"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <br>
-                            <input name="submitButton" type="submit" value="Salvesta">
-                        </td>
-                    </tr>
-                </tbody>
-                </table>
-            </form>
-    <br><br>
+<div id="menu">
+    <a href="?cmd=list_page" id="list-page-link">Nimekiri</a>&nbsp;&nbsp;|&nbsp;
+    <a href="?cmd=add_page" id="add-page-link">Lisa</a>
+</div>
+<br><br>
+
+<div tpl-if="$saved">
+    Ei saa isikud lisada! Kontrolli andmed!
+</div>
+<form method="post" action="?cmd=add">
+    <table class="form-table">
+        <tbody>
+        <tr>
+            <td>Eesnimi:</td>
+            <td><label for="firstName"></label><input type="text" name="firstName" id="firstName"></td>
+        </tr>
+        <tr>
+            <td>Perekonnanimi:</td>
+            <td><label for="lastName"></label><input type="text" name="lastName" id="lastName"></td>
+        </tr>
+        <tr>
+            <td>Telefonid:</td>
+            <td><input type="text" name="phone1" id="phone1"></td>
+            <td><input type="text" name="phone2" id="phone2"></td>
+            <td><input type="text" name="phone3" id="phone3"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <br>
+                <input name="submitButton" type="submit" value="Salvesta">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<br><br>
 </body>
 </html>
